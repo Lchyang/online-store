@@ -8,12 +8,12 @@ var banners = require('./mock/banner.js');
 var menu = require('./mock/menu.js');
 var hotSearch = require('./mock/hotSearch.js');
 
-Mock.mock('/login',login)//登录
-Mock.mock('/getOpro',newOpro)//首页新品
-Mock.mock('/getIndexList',indexList)//首页list
-Mock.mock('/getBanner',banners)//首页banner
-Mock.mock('/getMenu',menu)//首页menu
-Mock.mock('/getHotSearch',hotSearch)//首页热搜
+Mock.mock('/login', login)//登录
+Mock.mock('/getOpro', newOpro)//首页新品
+Mock.mock('/getIndexList', indexList)//首页list
+Mock.mock('/getBanner', banners)//首页banner
+Mock.mock('/getMenu', menu)//首页menu
+Mock.mock('/getHotSearch', hotSearch)//首页热搜
 
 Mock.mock('/product/details', // 商品详情数据
     {
@@ -239,12 +239,12 @@ Mock.mock('/product/list', // 商品列表
                 sales: 2
             },
             {
-              id: '23425436',
-              imgurl: 'http://sx.youxueshop.com/images/201512/thumb_img/47_thumb_G_1448946213633.jpg',
-              productname: '澳洲进口牛尾巴300g 新鲜肥牛肉',
-              description: '新鲜羊羔肉整只共15斤，原生态大山放牧羊羔，曾经的皇室贡品，央视推荐，2005年北京招待全球财金首脑。五层专用包装箱+真空包装+冰袋+保鲜箱+顺丰冷链发货，路途保质期8天',
-              price: '￥232元',
-              sales: 300
+                id: '23425436',
+                imgurl: 'http://sx.youxueshop.com/images/201512/thumb_img/47_thumb_G_1448946213633.jpg',
+                productname: '澳洲进口牛尾巴300g 新鲜肥牛肉',
+                description: '新鲜羊羔肉整只共15斤，原生态大山放牧羊羔，曾经的皇室贡品，央视推荐，2005年北京招待全球财金首脑。五层专用包装箱+真空包装+冰袋+保鲜箱+顺丰冷链发货，路途保质期8天',
+                price: '￥232元',
+                sales: 300
             },
         ],
         totalNum: 12
@@ -255,7 +255,7 @@ Mock.mock('/category', // 菜单列表
     {
         id: 1232434,
         name: '肉类',
-        children:[
+        children: [
             {
                 id: 123,
                 name: '精品肉类',
@@ -362,16 +362,16 @@ Mock.mock('/currentLoc',
             name: '粮油副食',
         },
         {
-          id: 56,
-          name: '休闲食品',
+            id: 56,
+            name: '休闲食品',
         },
         {
-          id: 6,
-          name: '蔬菜水果',
+            id: 6,
+            name: '蔬菜水果',
         },
         {
-          id: 7,
-          name: '奶类食品',
+            id: 7,
+            name: '奶类食品',
         }
 
 
@@ -380,18 +380,22 @@ Mock.mock('/currentLoc',
 Mock.mock('/priceRange',
     [
         {
+            id: 1,
             min: 1,
             max: 50,
         },
         {
+            id: 2,
             min: 50,
             max: 100,
         },
         {
+            id: 3,
             min: 100,
             max: 200,
         },
         {
+            id: 4,
             min: 200,
             max: 400,
         },
@@ -400,73 +404,73 @@ Mock.mock('/priceRange',
 )
 Mock.mock('/shoppingCartList',  // 请求购物车列表数据
     {
-        totalPrice:369,
-        goods_list:[{
+        totalPrice: 369,
+        goods_list: [{
             id: '23243453',
             image: 'http://sx.youxueshop.com/images/201512/thumb_img/1_thumb_G_1449024889033.jpg',
             title: '新鲜水果甜蜜香脆单果约800克',
             num: 1,
             price: 123,
-            total:123
+            total: 123
         },
         {
             id: '23243453',
-            image:'http://sx.youxueshop.com/images/201512/thumb_img/1_thumb_G_1449024889033.jpg',
+            image: 'http://sx.youxueshop.com/images/201512/thumb_img/1_thumb_G_1449024889033.jpg',
             title: '新鲜水果甜蜜香脆单果约800克',
             num: 2,
             price: 123,
-            total:123
+            total: 123
         },
         {
             id: '23243453',
-            image:'http://sx.youxueshop.com/images/201512/thumb_img/1_thumb_G_1449024889033.jpg',
+            image: 'http://sx.youxueshop.com/images/201512/thumb_img/1_thumb_G_1449024889033.jpg',
             title: '新鲜水果甜蜜香脆单果约800克',
             num: 4,
             price: 123,
-            total:123
+            total: 123
         }]
 
     }
 
 )
 Mock.mock('/shoppingCart/addNum',  //购物车数量加一
-{
+    {
 
-})
+    })
 Mock.mock('/shoppingCart/reduceNum',  //购物车数量减一
-{
+    {
 
-})
+    })
 Mock.mock('/shoppingCart/remove',  //移除购物车某个商品
-{
+    {
 
-})
+    })
 Mock.mock('/shoppingCart/clear',  //清空购物车
-{
+    {
 
-})
+    })
 Mock.mock('/order/orderInfo',  //获取订单收货人信息
-{
-    orderStatus: '已完成',
-    payStatus: '未付款',
-    deliveryStatus: '未发货'
-})
+    {
+        orderStatus: '已完成',
+        payStatus: '未付款',
+        deliveryStatus: '未发货'
+    })
 
 Mock.mock('/order/receiveInfo',  //获取订单收货人信息
-{
-    name: 'dsdsd',
-    email: '5655@qq.com',
-    post: 934023,
-    addr: '地址',
-    tel: 2346723,
-    mobile: 13834442233,
-    symbol: '大厦',
-    deliveryTime: '8点'
-})
+    {
+        name: 'dsdsd',
+        email: '5655@qq.com',
+        post: 934023,
+        addr: '地址',
+        tel: 2346723,
+        mobile: 13834442233,
+        symbol: '大厦',
+        deliveryTime: '8点'
+    })
 Mock.mock('/order/updateReceiveInfo',  //更新收货人信息
-{
-    
-})
+    {
+
+    })
 Mock.mock('/message/getAll',  //删除留言
     [
         {
@@ -486,34 +490,34 @@ Mock.mock('/message/getAll',  //删除留言
     ])
 
 Mock.mock('/message/deleteMessage',  //删除留言
-{
-    
-})
+    {
+
+    })
 Mock.mock('/message/downloadMessage',  //下载上传的文件
-{
-    
-})
+    {
+
+    })
 Mock.mock('/message/addMessage',  //添加留言
-{
-    
-})
+    {
+
+    })
 Mock.mock('/address',  //获得所有配送地址
-[
-    {
-        id: '222',
-        addr: '成都高新区',
-        tel: 18311220453,
-        name: 'bobby',
-        note: '发顺丰'
-    },
-    {
-        id: '333',
-        addr: '成都高新区某小区',
-        tel: 18311220453,
-        name: 'bobby',
-        note: '发顺丰'
-    }
-])
+    [
+        {
+            id: '222',
+            addr: '成都高新区',
+            tel: 18311220453,
+            name: 'bobby',
+            note: '发顺丰'
+        },
+        {
+            id: '333',
+            addr: '成都高新区某小区',
+            tel: 18311220453,
+            name: 'bobby',
+            note: '发顺丰'
+        }
+    ])
 
 
 

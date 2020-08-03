@@ -7,8 +7,8 @@
           <div class="items cle w500">
             <div
               class="link"
-              v-for="(item, index) in priceRange"
-              :key="index"
+              v-for="item in priceRange"
+              :key="item.id"
               @click="changePriceRange(item.min,item.max)"
             >
               <a class="item">{{item.min}}&nbsp;-&nbsp;{{item.max}}</a>
@@ -161,21 +161,6 @@ export default {
   overflow: visible;
   z-index: 10;
 }
-
-/*.bd a span{background:url(images/search-page-bg.png) 0 -9999px no-repeat}*/
-/*.bd {*/
-/*padding:0 0 6px 14px;*/
-/*margin-right:-10px;*/
-/*height:43px;*/
-/*overflow:hidden*/
-/*}*/
-/*.main_cata li .bd a {*/
-/*color:#999;*/
-/*display:inline-block;*/
-/*margin-right:14px;*/
-/*line-height:22px*/
-/*}*/
-
 .priceform {
   position: absolute;
   top: -11px;
