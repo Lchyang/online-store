@@ -55,7 +55,7 @@ export const getFav = goodsId => { return axios.get(`${host}/userfavs/`+goodsId+
 
 //登录
 export const login = params => {
-  return axios.post(`${host}/login/`, params)
+  return axios.post(`${host_}/login/`, params)
 }
 
 //注册
