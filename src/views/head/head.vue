@@ -43,9 +43,9 @@
         <span>热搜榜：</span>
         <router-link
           v-for="item in hotSearch"
-          :to="'/app/home/search/'+item.keywords"
-          :key="item.keywords"
-        >{{item.keywords}}</router-link>
+          :to="'/app/home/search/'+item.name"
+          :key="item.name"
+        >{{item.name}}</router-link>
       </div>
       <div class="intro">
         <ul>
@@ -190,7 +190,7 @@
 <script>
 import { mapGetters } from "vuex";
 import cookie from "../../static/js/cookie";
-import { getHotSearch, getCategory, deleteShopCart } from "../../api/api";
+import { getCategory, deleteShopCart } from "../../api/api";
 export default {
   data() {
     return {
@@ -284,8 +284,9 @@ export default {
         });
     },
     getHotSearch() {
-      //获取热搜
-      getHotSearch()
+      this.$http
+        .get("/hotSearch", {
+        })
         .then((response) => {
           this.hotSearch = response.data;
         })

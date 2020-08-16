@@ -16,22 +16,22 @@ export const bannerGoods = params => { return axios.get(`${host}/banners/`) }
 //获取商品类别信息
 export const getCategory = params => {
   if('id' in params){
-    return axios.get(`${host_}/categorys/`+params.id+'/');
+    return axios.get(`${host_}/categories/`+params.id+'/');
   }
   else {
-    return axios.get(`${host_}/categorys/`, params);
+    return axios.get(`${host_}/categories/`, params);
   }
 };
 
 
 //获取热门搜索关键词
-export const getHotSearch = params => { return axios.get(`${host_}/hotsearchs/`) }
+export const getHotSearch = params => { return axios.get(`${host}/hotsearchs/`) }
 
 //获取商品列表
 export const getGoods = params => { return axios.get(`${host_}/goods/`, { params: params }) }
 
 //商品详情
-export const getGoodsDetail = goodId => { return axios.get(`${host}/goods/${goodId}`+'/') }
+export const getGoodsDetail = goodId => { return axios.get(`${host_}/goods/${goodId}`+'/') }
 
 //获取购物车商品
 export const getShopCarts = params => { return axios.get(`${host}/shopcarts/`) }
@@ -55,7 +55,7 @@ export const getFav = goodsId => { return axios.get(`${host}/userfavs/`+goodsId+
 
 //登录
 export const login = params => {
-  return axios.post(`${host_}/login/`, params)
+  return axios.post(`${host_}/jwt-login/`, params)
 }
 
 //注册

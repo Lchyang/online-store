@@ -8,13 +8,13 @@
                     </span>
                     <span class="nalaprice xszk">
                         <b>
-                        ￥{{item.shop_price}}元
+                        ￥{{item.sales_price}}元
                         </b>
                     </span>
                     <span class="productname">{{item.name}}</span>
                     <span class="description">{{item.goods_brief}}</span>
                     <!-- <span class="price">{{item.price}}</span> -->
-                    <span class="salerow">销量：<span class="sales">{{item.sold_num}}</span>件 </span>
+                    <span class="salerow">销量：<span class="sales">{{item.sold_nums}}</span>件 </span>
                 </router-link>
                 <!--<a class="addcart" target="_blank" rel="nofollow" @click="addShoppingCart">加入购物车</a>-->
             </li>

@@ -2,10 +2,10 @@
   <div class="sort">
     <div class="bd">
       <form name="listform">
-        <a title="销量" class="curr" rel="nofollow" @click="sortType('-sold_num')">
+        <a title="销量" class="curr" rel="nofollow" @click="sortType('-sold_nums')">
           <span :class="{search_DESC: cur==='-sold_num'}">销量</span>
         </a>
-        <a title="价格" class="curr" rel="nofollow" @click="sortType('-shop_price')">
+        <a title="价格" class="curr" rel="nofollow" @click="sortType('-sales_price')">
           <span :class="{search_DESC: cur==='-shop_price'}">价格</span>
         </a>
       </form>

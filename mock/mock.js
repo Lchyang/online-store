@@ -518,6 +518,17 @@ Mock.mock('/address',  //获得所有配送地址
             note: '发顺丰'
         }
     ])
+    Mock.mock('/hotSearch',  //获得所有配送地址
+    [
+        {
+            id: '222',
+            name: '牛奶',
+        },
+        {
+            id: '333',
+            name: '水果',
+        }
+    ])
 
 
 
