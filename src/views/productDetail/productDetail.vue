@@ -41,7 +41,7 @@
                                 <li>
                                     <span class="lbl">市场价</span> <em class="cancel">￥{{proDetail.market_price}}元</em></li>
                                 <li>
-                                    <span class="icon_promo">抢购</span> <span class="lbl">促销价</span><span class="unit"> <strong class="nala_price red" id="ECS_SHOPPRICE">￥{{proDetail.shop_price}}元</strong> </span>  <span class="timedown" id="timedown"></span>
+                                    <span class="icon_promo">抢购</span> <span class="lbl">促销价</span><span class="unit"> <strong class="nala_price red" id="ECS_SHOPPRICE">￥{{proDetail.sales_price}}元</strong> </span>  <span class="timedown" id="timedown"></span>
                                 </li>
                                 <li>
                                     <span class="lbl">销&nbsp;&nbsp;&nbsp;量</span><span>最近售出<em class="red">{{proDetail.sold_num}}</em>件</span></li>
@@ -218,7 +218,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
         },
         addCollect () { //加入收藏
           addFav({
-              goods: this.productId
+              good: this.productId
           }).then((response)=> {
                 console.log(response.data);
                 this.hasFav = true
