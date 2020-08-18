@@ -23,9 +23,9 @@
                                     <tr>
                                         <td width="28%" align="right" bgcolor="#FFFFFF">性　别： </td>
                                         <td width="72%" align="left" bgcolor="#FFFFFF">
-                                            <input type="radio" id="male" value="male" v-model="userInfo.gender">
+                                            <input type="radio" id="2" value="2" v-model="userInfo.gender">
                                             <label for="male">男</label>
-                                            <input type="radio" id="female" value="female" v-model="userInfo.gender">
+                                            <input type="radio" id="1" value="1" v-model="userInfo.gender">
                                             <label for="female">女</label>
                                         </td>
                                     </tr>
@@ -87,7 +87,8 @@ import {getUserDetail, updateUserInfo} from '../../api/api'
         methods: {
             getUserInfo () { //请求用户信息
               getUserDetail().then((response)=> {
-                    this.userInfo = response.data;
+                    this.userInfo = response.data[0];
+                    console.log(this.userInfo)
                 }).catch(function (error) {
                     console.log(error);
                 });

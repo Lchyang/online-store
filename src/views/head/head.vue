@@ -276,7 +276,6 @@ export default {
         params: {},
       })
         .then((response) => {
-          console.log(response);
           this.allMenuLabel = response.data;
         })
         .catch(function (error) {

@@ -152,6 +152,7 @@ import { getGoodsDetail, getFav, addFav, delFav, addShopCart,getShopCart } from 
         if(cookie.getCookie('token')){
           getFav(productId).then((response)=> {
             this.hasFav = true
+            console.log(this.hasFav)
           }).catch(function (error) {
             console.log(error);
           });

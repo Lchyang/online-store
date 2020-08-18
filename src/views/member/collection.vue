@@ -14,14 +14,14 @@
                             <th width="30%" bgcolor="#ffffff">价格</th>
                             <th width="35%" bgcolor="#ffffff">操作</th>
                         </tr>
-                        <tr v-for="(item,index) in collections">
+                        <tr v-for="item in collections" :key="item.id">
                             <td bgcolor="#ffffff">
-                                <router-link :to="'/app/home/productDetail/'+item.goods.id" class="f6" target="_blank">{{item.goods.name}}</router-link>
+                                <router-link :to="'/app/home/productDetail/'+item.good.id" class="f6" target="_blank">{{item.good.name}}</router-link>
                             </td>
-                            <td bgcolor="#ffffff">本店价<span class="goods-price">￥{{item.goods.shop_price}}元</span>
+                            <td bgcolor="#ffffff">本店价<span class="goods-price">￥{{item.good.sales_price}}元</span>
                             </td>
                             <td align="center" bgcolor="#ffffff">
-                                <a class="f6" @click="deletePro(index, item.goods.id)">删除</a>
+                                <a class="f6" @click="deletePro(index, item.good.id)">删除</a>
                             </td>
                         </tr>
                         <!-- <tr>

@@ -9,18 +9,18 @@
                     <div class="blank"></div>
                     <div class="message-all">
                         <ul>
-                            <li v-for="(item,index) in messageAll">
+                            <li v-for="(item, index) in messageAll" :key='item.id'>
                                 <div>
-                                    <span v-if="item.message_type===1">留言：</span>
-                                    <span v-if="item.message_type===2">投诉：</span>
-                                    <span v-if="item.message_type===3">询问：</span>
-                                    <span v-if="item.message_type===4">售后：</span>
-                                    <span v-if="item.message_type===5">求购：</span>
-                                    <span>{{item.subject}}</span>
-                                    <span>（{{item.add_time}}）</span>
+                                    <span v-if="item.msg_type===1">留言：</span>
+                                    <span v-if="item.msg_type===2">投诉：</span>
+                                    <span v-if="item.msg_type===3">询问：</span>
+                                    <span v-if="item.msg_type===4">售后：</span>
+                                    <span v-if="item.msg_type===5">求购：</span>
+                                    <span>{{item.title}}</span>
+                                    <span>（{{item.created_time}}）</span>
                                 </div>
                                 <div>
-                                  {{item.message}}
+                                  {{item.content}}
                                 </div>
                                 <div>
                                     <a @click="deleteMessage(index, item.id)">删除</a>
@@ -143,9 +143,9 @@
             submitMessage () { //提交留言
                 const formData = new FormData();
                 formData.append('file',this.file);
-                formData.append('subject',this.subject);
-                formData.append('message',this.message);
-                formData.append('message_type',this.message_type);
+                formData.append('title',this.subject);
+                formData.append('content',this.message);
+                formData.append('msg_type',this.message_type);
                 addMessage(formData).then((response)=> {
                     this.getMessage();
 
