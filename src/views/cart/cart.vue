@@ -19,7 +19,7 @@
               <p></p>
             </div>
             <div class="price-xj">
-              <p><em>￥{{item.goods.shop_price}}元</em></p>
+              <p><em>￥{{item.goods.sales_price}}元</em></p>
             </div>
             <div class="nums" id="nums">
               <span class="minus" title="减少1个数量" @click="reduceCartNum(index, item.goods.id);">-</span>
@@ -27,7 +27,7 @@
               <span class="add" title="增加1个数量" @click="addCartNum(index, item.goods.id);">+</span>
             </div>
             <div class="price-xj"><span></span>
-              <em id="total_items_3137">￥{{item.goods.shop_price * item.nums}}元</em>
+              <em id="total_items_3137">￥{{item.goods.sales_price * item.nums}}元</em>
             </div>
             <div class="del">
               <a class="btn-del" @click="deleteGoods(index, item.goods.id)">删除</a>
@@ -115,8 +115,7 @@
         var totalPrice = 0
         this.goods.goods_list = response.data;
         response.data.forEach(function(entry) {
-          totalPrice += entry.goods.shop_price*entry.nums
-          console.log(entry.goods.shop_price);
+          totalPrice += entry.goods.sales_price*entry.nums
         });
 
         this.goods.totalPrice = totalPrice
@@ -151,7 +150,7 @@
         var goods_list = this.goods.goods_list;
         var totalPrice = 0;
         for(var i = 0;i<goods_list.length;i++){
-          totalPrice=totalPrice+goods_list[i].nums* goods_list[i].goods.shop_price;
+          totalPrice=totalPrice+goods_list[i].nums* goods_list[i].goods.sales_price;
         }
         this.totalPrice = totalPrice;
       },

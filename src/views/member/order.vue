@@ -17,10 +17,10 @@
                                 </tr>
                                 <tr v-for="item in orders">
                                     <td align="center" bgcolor="#ffffff"><a class="f6" @click="goDetail(item.id)">{{item.order_sn}}</a></td>
-                                    <td align="center" bgcolor="#ffffff">{{item.add_time}}</td>
+                                    <td align="center" bgcolor="#ffffff">{{item.created_time}}</td>
                                     <td align="right" bgcolor="#ffffff">￥{{item.order_mount}}元</td>
-                                    <td v-if="item.pay_status == 'paying' " align="center" bgcolor="#ffffff">待支付</td>
-                                    <td v-if="item.pay_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">已支付</td>
+                                    <td v-if="item.paying_status == 'paying' " align="center" bgcolor="#ffffff">待支付</td>
+                                    <td v-if="item.paying_status == 'TRADE_SUCCESS' " align="center" bgcolor="#ffffff">已支付</td>
                                     <td align="center" bgcolor="#ffffff"><font class="f6"><a @click="cancelOrder(item.id)">取消订单</a></font></td>
                                 </tr>
                             </tbody>
